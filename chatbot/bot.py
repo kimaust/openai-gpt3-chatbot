@@ -68,10 +68,7 @@ class Bot(MessageReceiver):
         choices = response["choices"]
         response_text = choices[0].get("text").strip()
 
-        # Sometimes OpenAI GPT-3 generates two double newlines as a result of some completion to the
-        # question asked by the user. So remove that and possible bot name followed by colon and
-        # stop sequences.
-        response_text = self._remove_prefix(response_text, "\n\n")
+        # Remove possible bot name followed by colon and stop sequences.
         response_text = self._remove_prefix(response_text, f"{self._name}:")
         response_text = self._remove_prefix(response_text, f"{self._start_seq}:")
         response_text = self._remove_prefix(response_text, f"{self._restart_seq}:")
