@@ -12,7 +12,7 @@ And activate the virtual environment:
 
 ```bash
 source venv/bin/activate # for linux
-./venv/Scripts/activate  # for Windows
+./venv/Scripts/Activate  # for Windows
 ```
 
 Finally, install the required packages using:
